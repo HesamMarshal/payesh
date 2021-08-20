@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Payesh</string>
+    <string name="title_home">Home</string>
+    <string name="splash_screen_title">پایش</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="add_update_item">Add Item</string>
+    <string name="add_item">Add Item</string>
+
+
+    <string name="lbl_add_item">ADD ITEM</string>
+
+    <string name="lbl_systolic">Systolic</string>
+    <string name="lbl_diastolic">Diastolic</string>
+    <string name="lbl_pulse">Pulse</string>
+    <string name="lbl_date">Date</string>
+    <string name="lbl_time">Time</string>
+
+
+</resources>
