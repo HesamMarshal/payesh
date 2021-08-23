@@ -4,7 +4,7 @@ object Constants {
 
     const val HEART_SYSTOLIC : String = "HeartSystolic"
     const val HEART_DIASTOLIC: String = "HeartDiastolic"
-    const val HEART_RATE:String = "HeartRate"
+    const val HEART_PULSE:String = "HeartPulse"
 
     fun heartSystolic():ArrayList<String>{
         val list = ArrayList<String>()
@@ -51,7 +51,7 @@ object Constants {
 
         return list
     }
-    fun heartRate():ArrayList<String>{
+    fun heartPulse():ArrayList<String>{
         val list = ArrayList<String>()
         list.add("10")
         list.add("40")

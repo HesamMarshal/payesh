@@ -57,9 +57,8 @@ class AddUpdateItemActivity : AppCompatActivity() , View.OnClickListener {
                 }
                 R.id.et_pulse ->{
                     customItemsListDialog(resources.getString(R.string.title_select_heart_pulse),
-                        //TODO: Change to Pulse
-                        Constants.heartRate(),
-                        Constants.HEART_RATE)
+                        Constants.heartPulse(),
+                        Constants.HEART_PULSE)
                     return
                 }
             }
@@ -83,12 +82,10 @@ class AddUpdateItemActivity : AppCompatActivity() , View.OnClickListener {
     }
 
 
-    // Not need for now
-
+    // TODO: Not need for now
     companion object{
         private const val CAMERA = 1
         private const val GALLERY = 2
-
         private const val IMAGE_DIRECTORY = "FavDishImages"
     }
 }
