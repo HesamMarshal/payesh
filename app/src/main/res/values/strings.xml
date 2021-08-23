@@ -16,5 +16,9 @@
     <string name="lbl_date">Date</string>
     <string name="lbl_time">Time</string>
 
+    <string name="title_select_heart_systolic">SELECT SYSTOLIC</string>
+    <string name="title_select_heart_diastolic">SELECT DIASTOLIC</string>
+    <string name="title_select_heart_pulse">SELECT PULSE</string>
+
 
 </resources>
