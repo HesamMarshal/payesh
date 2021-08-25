@@ -20,5 +20,11 @@
     <string name="title_select_heart_diastolic">SELECT DIASTOLIC</string>
     <string name="title_select_heart_pulse">SELECT PULSE</string>
 
+    <string name="err_msg_select_heart_date">Selcet Heart Date.</string>
+    <string name="err_msg_select_heart_time">Select Heart Time.</string>
+    <string name="err_msg_select_heart_systloic">Select Heart Systolic.</string>
+    <string name="err_msg_select_heart_diastolic">Select Heart Diastolic.</string>
+    <string name="err_msg_select_heart_pulse">Select Heart Pulse.</string>
+
 
 </resources>

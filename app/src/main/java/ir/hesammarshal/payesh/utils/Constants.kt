@@ -8,70 +8,25 @@ object Constants {
 
     fun heartSystolic():ArrayList<String>{
         val list = ArrayList<String>()
-        list.add("30")
-        list.add("40")
-        list.add("50")
-        list.add("60")
-        list.add("70")
-        list.add("80")
-        list.add("90")
-        list.add("100")
-        list.add("110")
-        list.add("120")
-        list.add("130")
-        list.add("140")
-        list.add("150")
-        list.add("160")
-        list.add("170")
-        list.add("180")
-        list.add("300")
-
+        for (i in 30..300) {
+            list.add(i.toString())
+        }
         return list
     }
     fun heartDiastolic():ArrayList<String>{
         val list = ArrayList<String>()
-        list.add("20")
-        list.add("30")
-        list.add("40")
-        list.add("50")
-        list.add("60")
-        list.add("70")
-        list.add("80")
-        list.add("90")
-        list.add("100")
-        list.add("110")
-        list.add("120")
-        list.add("130")
-        list.add("140")
-        list.add("150")
-        list.add("160")
-        list.add("170")
-        list.add("180")
-        list.add("300")
-
+        // TODO: add by for
+        for (i in 20..300) {
+            list.add(i.toString())
+        }
         return list
     }
     fun heartPulse():ArrayList<String>{
         val list = ArrayList<String>()
-        list.add("10")
-        list.add("40")
-        list.add("50")
-        list.add("60")
-        list.add("70")
-        list.add("80")
-        list.add("90")
-        list.add("100")
-        list.add("110")
-        list.add("120")
-        list.add("130")
-        list.add("140")
-        list.add("150")
-        list.add("160")
-        list.add("170")
-        list.add("180")
-        list.add("200")
-
+        // TODO: add by for
+        for (i in 10..200) {
+            list.add(i.toString())
+        }
         return list
     }
-
 }

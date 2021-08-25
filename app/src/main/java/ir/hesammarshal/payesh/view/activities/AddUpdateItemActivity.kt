@@ -3,7 +3,9 @@ package ir.hesammarshal.payesh.view.activities
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import ir.hesammarshal.payesh.R
 import ir.hesammarshal.payesh.databinding.ActivityAddUpdateItemBinding
@@ -18,6 +20,9 @@ class AddUpdateItemActivity : AppCompatActivity() , View.OnClickListener {
 
     private lateinit var mBinding:ActivityAddUpdateItemBinding
 
+    // To Store Value
+    private lateinit var mCustomListDialog : Dialog
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,11 +30,11 @@ class AddUpdateItemActivity : AppCompatActivity() , View.OnClickListener {
         setContentView(mBinding.root)
         setupActionBar()
 
-        //mBinding.ivAddDishImage.setOnClickListener(this)
-
         mBinding.etSystolic.setOnClickListener(this)
         mBinding.etDiastolic.setOnClickListener(this)
         mBinding.etPulse.setOnClickListener(this)
+        // TODO: Change to Heart ????
+        mBinding.btnAddItem.setOnClickListener(this)
     }
     private fun setupActionBar(){
         setSupportActionBar(mBinding.toolbarAddHeartActivity)
@@ -61,26 +66,89 @@ class AddUpdateItemActivity : AppCompatActivity() , View.OnClickListener {
                         Constants.HEART_PULSE)
                     return
                 }
+                R.id.btn_add_item ->{
+                    val varDate = mBinding.etDate.text.toString().trim{ it <= ' '}
+                    val varTime = mBinding.etTime.text.toString().trim{ it <= ' '}
+                    val varSystolic = mBinding.etSystolic.text.toString().trim{ it <= ' '}
+                    val varDiastolic = mBinding.etDiastolic.text.toString().trim{ it <= ' '}
+                    val varPulse = mBinding.etPulse.text.toString().trim{ it <= ' '}
+                    when {
+                        TextUtils.isEmpty(varDate) -> {
+                            Toast.makeText(this@AddUpdateItemActivity,
+                                resources.getString(R.string.err_msg_select_heart_date),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        TextUtils.isEmpty(varTime) -> {
+                            Toast.makeText(this@AddUpdateItemActivity,
+                                resources.getString(R.string.err_msg_select_heart_time),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        TextUtils.isEmpty(varSystolic) -> {
+                            Toast.makeText(this@AddUpdateItemActivity,
+                                resources.getString(R.string.err_msg_select_heart_systloic),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        TextUtils.isEmpty(varDiastolic) -> {
+                            Toast.makeText(this@AddUpdateItemActivity,
+                                resources.getString(R.string.err_msg_select_heart_diastolic),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        TextUtils.isEmpty(varPulse) -> {
+                            Toast.makeText(this@AddUpdateItemActivity,
+                                resources.getString(R.string.err_msg_select_heart_pulse),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                        else -> {
+                            Toast.makeText(this@AddUpdateItemActivity,
+                                "All the entries are valid.",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
+
+
+                }
             }
         }
     }
 
 
     private fun customItemsListDialog(title: String, itemList:List<String>, selection: String){
-        val customListDialog = Dialog(this)
+        mCustomListDialog = Dialog(this)
         val binding : DialogCustomListBinding = DialogCustomListBinding.inflate(layoutInflater)
 
-        customListDialog.setContentView(binding.root)
+        mCustomListDialog.setContentView(binding.root)
         binding.tvTitle.text = title
         binding.rvList.layoutManager = LinearLayoutManager(this)
 
         val adapter = CustomListItemAdapter(this, itemList,selection)
         binding.rvList.adapter = adapter
-        customListDialog.show()
-
-
+        mCustomListDialog.show()
     }
 
+    // To retrive the slected value from User and store in Edit Box
+    fun selectedListItem(item: String, selection: String) {
+        when (selection){
+            Constants.HEART_SYSTOLIC ->{
+                mCustomListDialog.dismiss()
+                mBinding.etSystolic.setText(item)
+            }
+            Constants.HEART_DIASTOLIC ->{
+                mCustomListDialog.dismiss()
+                mBinding.etDiastolic.setText(item)
+            }
+            Constants.HEART_PULSE ->{
+                mCustomListDialog.dismiss()
+                mBinding.etPulse .setText(item)
+            }
+
+        }
+    }
 
     // TODO: Not need for now
     companion object{
