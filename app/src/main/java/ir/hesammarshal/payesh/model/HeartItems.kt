@@ -6,7 +6,6 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class HeartItems (
-
     @ColumnInfo(name = "heart_date") val heartDate: String,
     @ColumnInfo(name = "heart_time") val heartTime: String,
     @ColumnInfo val systolic: String,
