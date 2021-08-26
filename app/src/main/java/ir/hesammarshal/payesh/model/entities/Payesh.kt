@@ -1,4 +1,4 @@
-package ir.hesammarshal.payesh.model
+package ir.hesammarshal.payesh.model.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
