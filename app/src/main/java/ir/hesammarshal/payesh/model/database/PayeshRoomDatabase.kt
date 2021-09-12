@@ -8,6 +8,9 @@ import ir.hesammarshal.payesh.model.entities.PayeshHeart
 
 @Database(entities = [PayeshHeart::class], version = 1)
 abstract class PayeshRoomDatabase: RoomDatabase() {
+
+    abstract fun payeshDao() : PayeshDao
+
     companion object{
         @Volatile
         private var INSTANCE: PayeshRoomDatabase? = null
